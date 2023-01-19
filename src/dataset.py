@@ -24,24 +24,24 @@ def createDataCSV(dataset):
     dataset = name_map[dataset]
 
     fext = '_texts.txt' if dataset == 'Eurlex-4K' else '_raw_texts.txt'
-    with open(f'./data/{dataset}/train{fext}') as f:
+    with open(f'./data/{dataset}/train{fext}', encoding='utf8') as f:
         for i in tqdm.tqdm(f):
             texts.append(i.replace('\n', ''))
             dataType.append('train')
 
-    with open(f'./data/{dataset}/test{fext}') as f:
+    with open(f'./data/{dataset}/test{fext}', encoding='utf8') as f:
         for i in tqdm.tqdm(f):
             texts.append(i.replace('\n', ''))
             dataType.append('test')
 
-    with open(f'./data/{dataset}/train_labels.txt') as f:
+    with open(f'./data/{dataset}/train_labels.txt', encoding='utf8') as f:
         for i in tqdm.tqdm(f):
             for l in i.replace('\n', '').split():
                 label_map[l] = 0
             labels.append(i.replace('\n', ''))
 
 
-    with open(f'./data/{dataset}/test_labels.txt') as f:
+    with open(f'./data/{dataset}/test_labels.txt', , encoding='utf8') as f:
         print(len(label_map))
         for i in tqdm.tqdm(f):
             for l in i.replace('\n', '').split():
