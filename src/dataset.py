@@ -41,7 +41,7 @@ def createDataCSV(dataset):
             labels.append(i.replace('\n', ''))
 
 
-    with open(f'./data/{dataset}/test_labels.txt', , encoding='utf8') as f:
+    with open(f'./data/{dataset}/test_labels.txt', encoding='utf8') as f:
         print(len(label_map))
         for i in tqdm.tqdm(f):
             for l in i.replace('\n', '').split():
